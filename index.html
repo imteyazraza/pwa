@@ -13,6 +13,8 @@
 <body>
 <h1>Welcome to PWAddd22</h1>
 <p>testing PWA</p>
+<button id="removeEvent">Remove Event</button>
+<button id="addEvent">Add Event</button>
 <script>
     if ('serviceWorker' in navigator) {
         console.log("Will the service worker register?");
@@ -24,13 +26,24 @@
         });
     } 
     var deferredPrompt;
-
-    window.addEventListener('beforeinstallprompt', (e) => {
-      // Prevent Chrome 67 and earlier from automatically showing the prompt
-      e.preventDefault();
-      // Stash the event so it can be triggered later.
-      deferredPrompt = e;
-    });
+	document.getElementById('addEvent').addEventListener("click", function(){
+		alert('addd');
+		window.addEventListener('beforeinstallprompt', (e) => {
+			// Prevent Chrome 67 and earlier from automatically showing the prompt
+			e.preventDefault();
+			// Stash the event so it can be triggered later.
+			deferredPrompt = e;
+		});
+	});
+	document.getElementById('removeEvent').addEventListener("click", function(){
+		alert('addd');
+		window.removeEventListener('beforeinstallprompt', (e) => {
+			// Prevent Chrome 67 and earlier from automatically showing the prompt
+			e.preventDefault();
+			// Stash the event so it can be triggered later.
+			deferredPrompt = e;
+		});
+	});
     </script>
 </body>
 </html>
