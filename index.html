@@ -16,6 +16,8 @@
 <button id="removeEvent">Remove Event</button>
 <button id="addEvent">Add Eventkkk</button>
 <script>
+var enableServiceWorker = false;
+if(enableServiceWorker){
     if ('serviceWorker' in navigator) {
         console.log("Will the service worker register?");
         navigator.serviceWorker.register('sw.js')
@@ -25,9 +27,11 @@
             console.log("No it didn't. This happened: ", err)
         });
     }
+}
     var deferredPrompt;
 	document.getElementById('addEvent').addEventListener("click", function(){
 		alert('dddddd');
+		enableServiceWorker = true;
 		/*window.addEventListener('beforeinstallprompt', (e) => {
 			// Prevent Chrome 67 and earlier from automatically showing the prompt
 			e.preventDefault();
@@ -37,6 +41,7 @@
 	});
 	document.getElementById('removeEvent').addEventListener("click", function(){
 		alert('adddsdfsd');
+		enableServiceWorker = false;
 		/*window.removeEventListener('beforeinstallprompt', (e) => {
 			// Prevent Chrome 67 and earlier from automatically showing the prompt
 			e.preventDefault();
