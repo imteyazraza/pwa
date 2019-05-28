@@ -14,7 +14,7 @@
 <h1>Welcome to PWAddd22</h1>
 <p>testing PWA</p>
 <button id="removeEvent">Remove Event</button>
-<button id="addEvent">Add Eventttt</button>
+<button id="addEvent">Add Event</button>
 <script>
     if ('serviceWorker' in navigator) {
         console.log("Will the service worker register?");
@@ -25,7 +25,7 @@
             console.log("No it didn't. This happened: ", err)
         });
     } 
-    var deferredPrompt;
+    //var deferredPrompt;
 	document.getElementById('addEvent').addEventListener("click", function(){
 		alert('dddddd');
 		/*window.addEventListener('beforeinstallprompt', (e) => {
