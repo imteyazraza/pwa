@@ -11,7 +11,7 @@
 <link rel="manifest" href="manifest.json">
 </head>
 <body>
-<h1>Welcome to PWA</h1>
+<h1>Welcome to PWAsdaf</h1>
 <p>testing PWA</p>
 	<button id="removeEvent">Remove Event</button>
 <button id="addEvent">Add Event</button>
@@ -34,7 +34,9 @@
 		    function(registrations) {
 			    console.log('registrations>>>',registrations)
 			for(let registration of registrations) {  
-			    registration.unregister();
+			    registration.unregister().then(() => {
+				window.location.reload();
+			      });
 
 			}
 
