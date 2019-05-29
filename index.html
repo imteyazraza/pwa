@@ -11,7 +11,7 @@
 <link rel="manifest" href="manifest.json">
 </head>
 <body>
-<h1>Welcome to PWAsdaf</h1>
+<h1>Welcome to PWA</h1>
 <p>testing PWA</p>
 	<button id="removeEvent">Remove Event</button>
 <button id="addEvent">Add Event</button>
@@ -19,7 +19,7 @@
     if ('serviceWorker' in navigator) {
         
 	document.getElementById('addEvent').addEventListener("click", function(){
-		alert('addd');
+		
 		console.log("Will the service worker register?");
 		navigator.serviceWorker.register('sw.js')
 		.then(function(reg){
@@ -29,7 +29,7 @@
 		});
 	});
 	document.getElementById('removeEvent').addEventListener("click", function(){
-		alert('addd');
+		
 		navigator.serviceWorker.getRegistrations().then(
 		    function(registrations) {
 			    console.log('registrations>>>',registrations)
