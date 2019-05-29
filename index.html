@@ -13,15 +13,35 @@
 <body>
 <h1>Welcome to PWA</h1>
 <p>testing PWA</p>
+	<button id="removeEvent">Remove Event</button>
+<button id="addEvent">Add Event</button>
 <script>
     if ('serviceWorker' in navigator) {
-        console.log("Will the service worker register?");
-        navigator.serviceWorker.register('sw.js')
-        .then(function(reg){
-            console.log("Yes, it did.");
-        }).catch(function(err) {
-            console.log("No it didn't. This happened: ", err)
-        });
+        
+	document.getElementById('addEvent').addEventListener("click", function(){
+		alert('addd');
+		console.log("Will the service worker register?");
+		navigator.serviceWorker.register('sw.js')
+		.then(function(reg){
+		    console.log("Yes, it did.");
+		}).catch(function(err) {
+		    console.log("No it didn't. This happened: ", err)
+		});
+	});
+	document.getElementById('removeEvent').addEventListener("click", function(){
+		alert('addd');
+		navigator.serviceWorker.getRegistrations().then(
+		    function(registrations) {
+			    console.log('registrations>>>',registrations)
+			for(let registration of registrations) {  
+			    registration.unregister();
+
+			}
+
+		});
+	});
+	
+
     } 
     /*var deferredPrompt;
 
@@ -33,6 +53,8 @@
       // Stash the event so it can be triggered later.
       deferredPrompt = e;
     });*/
+	
+	
     </script>
 </body>
 </html>
