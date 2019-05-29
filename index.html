@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Welcome to PWA</h1>
-<p>testing PWAe</p>
+<p>testing PWA</p>
 	<button id="removeEvent">Remove Event</button>
 <button id="addEvent">Add Event</button>
 <script>
@@ -35,7 +35,7 @@
 			    console.log('registrations>>>',registrations)
 			for(let registration of registrations) {  
 			    registration.unregister().then(() => {
-				//window.location.reload();
+				window.location.reload();
 			      });
 
 			}
