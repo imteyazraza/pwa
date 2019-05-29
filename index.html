@@ -14,7 +14,7 @@
 <h1>Welcome to PWA</h1>
 <p>testing PWA</p>
 	<button id="removeEvent">Remove Event</button>
-<button id="addEvent">Add Event</button>
+<button id="addEvent">Add Eventd</button>
 <script>
     if ('serviceWorker' in navigator) {
         
@@ -34,7 +34,7 @@
 		    function(registrations) {
 			    console.log('registrations>>>',registrations)
 			for(let registration of registrations) {  
-			    registration.unregister();
+			    registration.unregister('sw.js');
 
 			}
 
