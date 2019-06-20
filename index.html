@@ -16,10 +16,7 @@
 	<button id="removeEvent">Remove Event</button>
 <button id="addEvent">Add Event</button>
 <script>
-    if ('serviceWorker' in navigator) {
-        
-	document.getElementById('addEvent').addEventListener("click", function(){
-		
+    if ('serviceWorker' in navigator) {		
 		console.log("Will the service worker register?");
 		navigator.serviceWorker.register('sw.js')
 		.then(function(reg){
@@ -27,23 +24,6 @@
 		}).catch(function(err) {
 		    console.log("No it didn't. This happened: ", err)
 		});
-	});
-	document.getElementById('removeEvent').addEventListener("click", function(){
-		
-		navigator.serviceWorker.getRegistrations().then(
-		    function(registrations) {
-			    console.log('registrations>>>',registrations)
-			for(let registration of registrations) {  
-			    registration.unregister().then(() => {
-				window.location.reload();
-			      });
-
-			}
-
-		});
-	});
-	
-
     } 
     /*var deferredPrompt;
 
