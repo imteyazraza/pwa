@@ -1,4 +1,3 @@
-const cacheName = 'news-v1';
 self.addEventListener('install', async e => {
     
     return self.skipWaiting();
