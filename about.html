@@ -22,8 +22,6 @@
 	let pagename=window.location.pathname;
 let swUrl = '/sw.js?pagename=' + encodeURIComponent(pagename);
 	
-	
-	var pagename=window.location.pathname;
     if ('serviceWorker' in navigator) {		
 		console.log("Will the service worker register?");
 		navigator.serviceWorker.register(swUrl)
