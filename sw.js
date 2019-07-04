@@ -11,19 +11,6 @@ self.addEventListener('activate', e => {
     self.clients.claim();
 });
 
-self.addEventListener('message', ({ data }) => {
-    console.log('data>>>>>>>>>>>>>>>>>>>>>.');
-  if (data == 'remove-fetch-event') {
-      self.removeEventListener('fetch', async e => {
-
-    });
-  }else{
-    self.addEventListener('fetch', async e => {
-
-    });
-  }
+self.addEventListener('message', function(event){
+    console.log("SW Received Message: " + event.data);
 });
-
-function fetchHandler(){
-
-}
