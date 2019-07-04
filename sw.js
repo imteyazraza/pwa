@@ -1,3 +1,5 @@
+console.log('self>>>>',self)
+
 self.addEventListener('install', async e => {
     
     return self.skipWaiting();
