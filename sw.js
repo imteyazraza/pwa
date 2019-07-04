@@ -3,8 +3,9 @@ let str = self.location.search;
 console.log('str',str);
 
 let urlParams = new URLSearchParams(self.location.search);
+console.log('urlParams',urlParams);
 let myParam = urlParams.get('myParam');
-console.log('myParam',myParam);
+
 
 if(str != 'about.html'){
 self.addEventListener('install', async e => {
