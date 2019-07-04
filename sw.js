@@ -2,8 +2,7 @@ console.log('self>>>>',self)
 let urlParams = new URLSearchParams(self.location.search);
 let myParam = urlParams.get('pagename');
 console.log('myParam',myParam);
-if(myParam != 'about.html'){
-    console.log('innnn')
+
 self.addEventListener('install', async e => {
     
     return self.skipWaiting();
@@ -11,19 +10,16 @@ self.addEventListener('install', async e => {
 self.addEventListener('activate', e => {
     self.clients.claim();
 });
-self.addEventListener('fetch', async e => {
-    
+
+self.addEventListener('message', ({ data }) => {
+    console.log('data',data);
+  if (data == 'remove-fetch-event') {
+    self.removeEventListener('fetch', fetchHandler);
+  }else{
+    self.addEventListener('fetch', fetchHandler);
+  }
 });
-}else{
-    console.log('innnn3333')
-self.addEventListener('install', async e => {
-    
-    return null;
-});
-self.addEventListener('activate', e => {
-    return null;
-});
-self.addEventListener('fetch', async e => {
-    
-});
+
+function fetchHandler(){
+
 }
