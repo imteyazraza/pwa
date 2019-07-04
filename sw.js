@@ -15,6 +15,7 @@ self.addEventListener('fetch', async e => {
     
 });
 }else{
+    console.log('innnn3333')
 self.removeEventListener('install', async e => {
     
     return self.skipWaiting();
