@@ -16,7 +16,7 @@ self.addEventListener('fetch', async e => {
 });
 }else{
     console.log('innnn3333')
-sself.addEventListener('install', async e => {
+self.addEventListener('install', async e => {
     
     return null;
 });
