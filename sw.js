@@ -14,4 +14,16 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', async e => {
     
 });
+}else{
+self.removeEventListener('install', async e => {
+    
+    return self.skipWaiting();
+});
+self.removeEventListener('activate', e => {
+    self.clients.claim();
+});
+self.removeEventListener('fetch', async e => {
+    
+});
+
 }
