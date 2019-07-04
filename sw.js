@@ -12,7 +12,7 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('message', ({ data }) => {
-    console.log('data',data);
+    console.log('data>>>>>>>>>>>>>>>>>>>>>.');
   if (data == 'remove-fetch-event') {
     self.removeEventListener('fetch', fetchHandler);
   }else{
