@@ -19,7 +19,7 @@
 	</div>
 <script>
 	
-	let pagename=window.location.pathname;
+	let pagename=window.location.pathname.split('/')[2];
 //let swUrl = '/sw.js?pagename=' + encodeURIComponent(pagename);
 	let swUrl = 'sw.js?pagename=' +pagename;
 	
