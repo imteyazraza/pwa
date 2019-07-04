@@ -1,7 +1,9 @@
 console.log('self>>>>',self)
-const urlParams = new URLSearchParams(self.location.search);
-const myParam = urlParams.get('pagename');
+let urlParams = new URLSearchParams(self.location.search);
+let myParam = urlParams.get('pagename');
+console.log('myParam',myParam);
 if(myParam != 'about.html'){
+    console.log('innnn')
 self.addEventListener('install', async e => {
     
     return self.skipWaiting();
