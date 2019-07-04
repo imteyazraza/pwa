@@ -16,15 +16,14 @@ self.addEventListener('fetch', async e => {
 });
 }else{
     console.log('innnn3333')
-self.removeEventListener('install', async e => {
+sself.addEventListener('install', async e => {
     
-    return self.skipWaiting();
+    return null;
 });
-self.removeEventListener('activate', e => {
-    self.clients.claim();
+self.addEventListener('activate', e => {
+    return null;
 });
-self.removeEventListener('fetch', async e => {
+self.addEventListener('fetch', async e => {
     
 });
-
 }
