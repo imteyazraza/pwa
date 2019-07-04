@@ -1,7 +1,7 @@
 console.log('self>>>>',self)
 let urlParams = new URLSearchParams(self.location.search);
 let myParam = urlParams.get('pagename');
-console.log('myParam',myParam);
+console.log('myParadasdm',myParam);
 
 self.addEventListener('install', async e => {
     
@@ -14,9 +14,13 @@ self.addEventListener('activate', e => {
 self.addEventListener('message', ({ data }) => {
     console.log('data>>>>>>>>>>>>>>>>>>>>>.');
   if (data == 'remove-fetch-event') {
-    self.removeEventListener('fetch', fetchHandler);
+      self.removeEventListener('fetch', async e => {
+
+    });
   }else{
-    self.addEventListener('fetch', fetchHandler);
+    self.addEventListener('fetch', async e => {
+
+    });
   }
 });
 
