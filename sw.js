@@ -1,7 +1,7 @@
 console.log('self>>>>',self)
 let urlParams = new URLSearchParams(self.location.search);
 let myParam = urlParams.get('pagename');
-console.log('myParadasdm',myParam);
+console.log('myParam2',myParam);
 
 self.addEventListener('install', async e => {
     
